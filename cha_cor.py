@@ -1,3 +1,35 @@
+def expand(origStr):
+    expStr = ""
+    for i in range(len(origStr)):
+        ch = origStr[i]
+        if ch.isalpha():
+            expStr += ch
+        else:
+            num = int(ch)
+            for j in range(num):
+                expStr += "?"
+    return expStr
+
+def compare(origStr1, origStr2):
+    expStr1 = expand(origStr1)
+    expStr2 = expand(origStr2)
+
+    if len(expStr1) != len(expStr2):
+        return False
+
+    for i in range(len(expStr1)):
+        ch1 = expStr1[i]
+        ch2 = expStr2[i]
+
+        if (ch1 != '?' and ch2 != '?') and (ch1 != ch2) :
+            return False
+
+    return True
+
+print("ap2e & appl1 = ", compare("ap2e", "appl1"))
+print("srini2s, 4nivas = ", compare("srini2s", "4nivas"))
+
+
 def check(str1:str, str2:str)->bool:
     s1=0
     x1=0
@@ -38,5 +70,5 @@ def check(str1:str, str2:str)->bool:
                 x2+=int(str2[s2])
             s2+=1
     return True
-x=input("enter two strings :").split()
-print (check(x[0],x[1]))
+# x=input("enter two strings :").split()
+# print (check(x[0],x[1]))
