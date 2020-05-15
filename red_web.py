@@ -1,13 +1,7 @@
-import urllib.parse
-import urllib.request
+from urllib.request import urlopen
 
-url = 'http://www.someserver.com/cgi-bin/register.cgi'
-values = {'name' : 'Michael Foord',
-          'location' : 'Northampton',
-          'language' : 'Python' }
+link = "http://www.gutenberg.org/files/11/11-0.txt"
 
-data = urllib.parse.urlencode(values)
-data = data.encode('ascii') # data should be bytes
-req = urllib.request.Request(url, data)
-with urllib.request.urlopen(req) as response:
-   the_page = response.read()
+f = urlopen(link)
+myfile = f.read()
+print(myfile)
