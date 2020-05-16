@@ -23,14 +23,7 @@ thewholefile=thewholefile.replace("a"," ",-1)
 thewholefile=thewholefile.replace("of"," ",-1)
 thewholefile=thewholefile.replace("it"," ",-1)
 thewholefile=thewholefile.replace("in"," ",-1)
-thewholefile=thewholefile.replace("s"," ",-1)
-thewholefile=thewholefile.replace("g"," ",-1)
-thewholefile=thewholefile.replace("t"," ",-1)
-thewholefile=thewholefile.replace("w"," ",-1)
-thewholefile=thewholefile.replace("h"," ",-1)
-thewholefile=thewholefile.replace("d"," ",-1)
-thewholefile=thewholefile.replace("n"," ",-1)
-thewholefile=thewholefile.replace("th"," ",-1)
+
 
 
 
