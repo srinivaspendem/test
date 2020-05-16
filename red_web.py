@@ -3,10 +3,12 @@ from urllib.request import urlopen
 link = "http://www.gutenberg.org/files/11/11-0.txt"
 
 f = urlopen(link)
-myfile = f.read()
-#word=myfile.readline().split()
-#print (myfile)
-#print(myfile.readline())
-word= myfile. readline().split
-#print(myfile)
-print(line)
+byteinput=f.read()
+thewholefile=str(byteinput)
+words=thewholefile.split()
+for i in range(0,10):
+   words.remove("of")
+   words.remove("in")
+   words.remove("by")
+   words.remove("the")
+   print(words[i])
