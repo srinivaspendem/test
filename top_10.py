@@ -4,32 +4,12 @@ link = "http://www.gutenberg.org/files/11/11-0.txt"
 f=urlopen(link)
 byteinput=f.read()
 thewholefile=str(byteinput)
-thewholefile=thewholefile.replace("."," ",-1)
-thewholefile=thewholefile.replace(","," ",-1)
-thewholefile=thewholefile.replace("!"," ",-1)
-thewholefile=thewholefile.replace('"'," ",-1)
-thewholefile=thewholefile.replace("'"," ",-1)
-thewholefile=thewholefile.replace("("," ",-1)
-thewholefile=thewholefile.replace(")"," ",-1)
-thewholefile=thewholefile.replace(":"," ",-1)
-thewholefile=thewholefile.replace("\\n"," ",-1)
-thewholefile=thewholefile.replace("\\r"," ",-1)
-thewholefile=thewholefile.replace("\\t"," ",-1)
-thewholefile=thewholefile.replace("\\"," ",-1)
-thewholefile=thewholefile.replace("and"," ",-1)
-thewholefile=thewholefile.replace("the"," ",-1)
-thewholefile=thewholefile.replace("to"," ",-1)
-thewholefile=thewholefile.replace("a"," ",-1)
-thewholefile=thewholefile.replace("of"," ",-1)
-thewholefile=thewholefile.replace("it"," ",-1)
-thewholefile=thewholefile.replace("in"," ",-1)
-
-
-
-
+thewholefile.replace("the","",-1)
 words=thewholefile.split()
+
 counter=dict()
 
+tuple(counter)
 for word in words:
     if (word.isalpha()):
         if (counter.__contains__(word)):
@@ -37,6 +17,13 @@ for word in words:
         else:
             counter[word]=1
 
+del counter['the']
+del counter['to']
+del counter['and']
+del counter['a']
+del counter['of']
+del counter['in']
+del counter['it']
 valuelist=list()
 for key in counter.keys():
     valuelist.append((counter[key],key))
